@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  
+  <!-- <link rel="icon" href="./static/images/favicon.ico"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">DACT: Dynamics-Aware Learning of Coupled Torque Policies for Disturbance-Robust Legged Locomotion</h1>
+          
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Oscar Youngquist and</span>
+            <span class="author-block">
+              Hao Zhang</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Human-Centered Robotics Lab @ University of Massachusetts Amherst</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <span class="link-block">
+              <a class="external-link" href="https://hcr.cs.umass.edu">
+                  <img src="./static/images/hcrlab-logo.png" alt="HCR Lab logo" 
+                        width="200" />
+              </a>
+            </span>
+          </div> -->
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./static/pdf/DACT_ICRA_2027.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>          
+
+              <!-- Supp Material Link -->
+              <span class="link-block">
+                <a href="./static/pdf/DACT_ICRA_2027_Supp.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                   <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m3.75 9v6m3-3H9m1.5-12H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+                  </span>
+                  <span>Supplementary Material</span>
+                </a>
+              </span>
+
+
+              <!-- Poster Link. -->
+              <!-- <span class="link-block">
+                <a href="./static/pdf/RINA_ICRA2025_Poster.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                    </svg>                    
+                  </span>
+                  <span>Poster</span>
+                </a>
+              </span> -->
+
+              <!--/ Poster Link. -->
+
+
+
+            </div>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="is-size-5 publication-venue">
+                IEEE International Conference on Robotics and Automation (ICRA) 2027 <p style="color:red;">(Under Review)</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-max-desktop">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robust quadruped deployment requires policies that reject disturbances from payloads, terrain variation, and torso-level external forces and moments.
+            However, standard position-control policies compensate only indirectly through fixed PD feedback, while direct-torque policies often lose high-bandwidth stabilization, and auxiliary compensation methods add additional training/compute without resolving the underlying action space-dynamics representation mismatch. 
+            We introduce DACT, a dynamics-aware framework that embeds disturbance compensation directly into the locomotion policy via coupled feedforward-torque and feedback-stabilized position actions. 
+            DACT learns a privileged-dynamics-aware latent context through next-step privileged observation reconstruction and uses physics-informed neural network (PINN) regularization to bias actions toward physically consistent whole-body stabilization. 
+            We evaluate DACT across payload variation, CoM shifts, complex terrain, and 6-DOF torso wrenches, with real-world tests including dynamic liquid payload transport across unstructured outdoor terrain. 
+            Results show that DACT improves disturbance rejection and locomotion stability over position-control, direct-torque, and adaptive torque-compensation baselines, enabling robust real-world locomotion under diverse external disturbances.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered"> -->
+      <!-- <div class="column is-max-desktop"> -->
+        <!-- <h2 class="title is-3">Video</h2> -->
+        <!-- <video controls playsinline allowfullscreen width="100%"> -->
+          <!-- <source src="./static/videos/presentation.mp4" -->
+                  <!-- type="video/mp4"> -->
+        <!-- </video> -->
+      <!-- </div> -->
+    <!-- </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Motivation. -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <div class="columns is-centered">
+            <div class="column">
+              <h4 class="title is-2 has-text-centered">Motivation</h4>
+              <div class="has-text-centered">
+                <img src="./static/images/DACT_ICRA_Figure_One.png"
+                      class="interpolation-image"
+                      alt="Interpolate start reference image."
+                      width="80%" />
+              </div>
+                <p>
+                  Quadruped robots have achieved substantial advances in locomotion capabilities, enabling agile mobility through unstructured environments that remain difficult or inaccessible for wheeled platforms. 
+                  Reinforcement learning (RL) has further expanded these capabilities by training robust gait policies in large-scale simulation, reducing reliance on hand-designed models while supporting dynamic behaviors across diverse terrains and commands.
+                  However, real-world deployments rarely occur under nominal conditions: robots may carry supplies over uneven terrain, recover from contact with obstacles or humans, or maintain balance as onboard loads shift during motion.
+                  These disturbances perturb body motion, reshape contact forces, and disrupt the coupling between foot placement, force generation, and torso stabilization. 
+                  Robust deployment therefore requires policies that reject disturbances online while preserving stable and reliable locomotion across diverse operating conditions.
+                  </p>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Motivation. -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <div class="columns is-centered">
+            <!-- Approach. -->
+            <div class="column">
+              <div class="content">
+                <h3 class="title is-2 has-text-centered">DACT Approach</h3>
+                <div class="has-text-centered">
+                  <img src="./static/images/approach_figure_V04.png"
+                        class="interpolation-image"
+                        alt="Interpolate start reference image."
+                        width="55%" />
+                <!-- </div>
+                <p>
+                  We present the <em><b>F</b>orward <b>L</b>ooking <b>A</b>daptation to Dynamic <b>P</b>ayloads</em> (FLAP) method for real-time adaptation of quadruped locomotion controllers to dynamic payloads. 
+                  FLAP enables proactive compensation for anticipated locomotion discrepancies caused by shifting payload mass distributions through a physics-informed neural network (PINN) that is designed to 
+                  model the robotic system's forward dynamics. The PINN simultaneously predicts the evolution of the robot's whole body state and the payload-induced forces and torques acting on the robot, while 
+                  a physics-informed loss function ensures the predictions respect the dynamics of the quadruped. Through PINN, FLAP is able to learn a physically plausible forward dynamics model that generalizes 
+                  well to novel states. The learned dynamics are then integrated into a composite adaptive control law that enables rapid, anticipatory joint-torque compensation in real time during real-world execution.
+                  Through integrating physics-informed learning with adaptive control, FLAP enables robust quadruped locomotion with effective adaptation to dynamic payloads, such as liquids.
+                </p>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-2 has-text-centered">Outdoor Real-World Terrains Demonstration</h2>
+        <p>We validated FLAP's robustness to real-world conditions through deployment on a physical robot carrying a 5 liter liquid payload across a varied outdoor course 
+          featuring five distinct terrains not encountered during training. The training data for FLAP consisted of 2.88 million time-steps from MuJoCo simulation on flat, 
+          unobstructed terrain. Transporting a liquid payload in the real-world requires not only counteracting the impact of the dynamic payload but also the ground reaction 
+          force variations introduced from unfamiliar terrains. </p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3 has-text-centered">5 Liter Liquid Water Payload</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-4 has-text-centered">FLAP</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+        <div class="content">
+          <video  controls autoplay muted loop playsinline height="100%">
+            <source src="./static/videos/moving_flap_tank1_01.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+
+
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-4 has-text-centered">WBIC</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">  
+      <div class="column">
+        <div class="content">
+          <video  controls muted playsinline height="100%">
+            <source src="./static/videos/moving_wbic_tank1_01_failure_whole.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video  controls muted playsinline height="100%">
+            <source src="./static/videos/moving_wbic_tank1_02_failure_whole.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ -->
+
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3 has-text-centered">4.5 Liter Water Liquid Payload</h2>
+        <p>We further evluated FLAP's ability to transport dynamic payloads by transporting an additional 4.5 liter liquid payload in a separate tank.
+          This tank is shorter and wider/longer than the previous, resulting in distinct time-varying mass distributions. We found FLAP was once again 
+          able to successfully transport this payload across our outdoor course. We did not evlaute using the WBIC baseline to avoid crashing and damaging the robot.</p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="content">
+          <video  controls muted playsinline height="100%">
+            <source src="./static/videos/moving_flap_tank2_01.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3 has-text-centered">No Payload Comparsion</h2>
+        <p>We additionally validated that FLAP's anticipatory joint torque compensations do not deteriorate the ability locomote without an added payload on outdoor terrains.</p>
+      </div>
+    </div>
+  
+    <div class="columns is-centered">  
+      <div class="column">
+        <div class="content">
+          <video  controls muted playsinline height="100%">
+            <source src="./static/videos/moving_flap_none.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video  controls muted playsinline height="100%">
+            <source src="./static/videos/moving_wbic_none.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="content">
+        <h2 class="title is-3 has-text-centered">FLAP Failure Case</h2>
+        <p>During our outdoor experiments we encountered a failure transporting the 4.5 liter liquid payload. Specifically, 
+          during transport the rear right leg knee motor overheated and temporarily failed. While this failure is not directly 
+          caused by FLAP, it does demonstrate that FLAP cannot adapt to motor failure.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+        <div class="content">
+          <video  controls muted playsinline height="100%">
+            <source src="./static/videos/moving_flap_tank2_01_failure.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{youngquist2024rina,
+      author    = {Youngquist, Oscar and Zhang, Hao},
+      title     = {RINA: Rapid Introspective Neural Adaptation for Out-of-Distribution Payload Configurations on Quadruped Robots},
+      year      = {2024}
+    }</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <!-- <p>
+            This work was partially supported by NSF CAREER Award IIS-2308492 and DARPA Young Faculty Award (YFA) D21AP10114-00.
+          </p> -->
+          <p>
+            This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed
+            under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
