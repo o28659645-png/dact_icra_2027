@@ -129,6 +129,21 @@
   </div>
 </section>
 
+<!-- Paper video. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-max-desktop">
+        <video controls playsinline preload="metadata" width="100%">
+          <source src="./static/videos/dact_icra27_compressed_web.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ Paper video. -->
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -148,18 +163,6 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered"> -->
-      <!-- <div class="column is-max-desktop"> -->
-        <!-- <h2 class="title is-3">Video</h2> -->
-        <!-- <video controls playsinline allowfullscreen width="100%"> -->
-          <!-- <source src="./static/videos/presentation.mp4" -->
-                  <!-- type="video/mp4"> -->
-        <!-- </video> -->
-      <!-- </div> -->
-    <!-- </div> -->
-    <!--/ Paper video. -->
   </div>
 </section>
 
@@ -185,7 +188,15 @@
                   However, real-world deployments rarely occur under nominal conditions: robots may carry supplies over uneven terrain, recover from contact with obstacles or humans, or maintain balance as onboard loads shift during motion.
                   These disturbances perturb body motion, reshape contact forces, and disrupt the coupling between foot placement, force generation, and torso stabilization. 
                   Robust deployment therefore requires policies that reject disturbances online while preserving stable and reliable locomotion across diverse operating conditions.
-                  </p>
+                  
+                  Payloads and external disturbances alter the robot's effective locomotion dynamics through the introduction of unmodeled forces and moments. 
+                  Most RL policies handle these effects indirectly with joint-position targets tracked by low-level PD controllers; while effective, this fixed impedance forces disturbance rejection to emerge through changes in desired joint kinematics rather than direct compensatory torques. 
+                  This creates a representational mismatch between the action space and the force generation governing balance and whole-body stabilization. 
+                  Direct-torque policies reduce this mismatch, but sacrifice the stabilizing structure of feedback control. 
+                  Recent auxiliary compensation methods add learned or control-theoretic adaptive joint-position/torque offsets to frozen nominal policies.
+                  However, these methods treat compensation as an external post-hoc module, requiring additional computation or training while leaving the base policy unable to encode disturbance-dependent dynamics or produce actions intrinsically aligned with disturbed whole-body stabilization.
+                  In contrast, biological and model-based controllers couple feedforward force generation with feedback stabilization for load- and contact-dependent adaptation, motivating coupled torque--position control policies.               
+                </p>
               </div>
 
           </div>
@@ -211,17 +222,28 @@
                   <img src="./static/images/approach_figure_V04.png"
                         class="interpolation-image"
                         alt="Interpolate start reference image."
-                        width="55%" />
-                <!-- </div>
+                        width="70%" />
+                </div>
                 <p>
-                  We present the <em><b>F</b>orward <b>L</b>ooking <b>A</b>daptation to Dynamic <b>P</b>ayloads</em> (FLAP) method for real-time adaptation of quadruped locomotion controllers to dynamic payloads. 
-                  FLAP enables proactive compensation for anticipated locomotion discrepancies caused by shifting payload mass distributions through a physics-informed neural network (PINN) that is designed to 
-                  model the robotic system's forward dynamics. The PINN simultaneously predicts the evolution of the robot's whole body state and the payload-induced forces and torques acting on the robot, while 
-                  a physics-informed loss function ensures the predictions respect the dynamics of the quadruped. Through PINN, FLAP is able to learn a physically plausible forward dynamics model that generalizes 
-                  well to novel states. The learned dynamics are then integrated into a composite adaptive control law that enables rapid, anticipatory joint-torque compensation in real time during real-world execution.
-                  Through integrating physics-informed learning with adaptive control, FLAP enables robust quadruped locomotion with effective adaptation to dynamic payloads, such as liquids.
+                  To address these fundamental limitations, we introduce <i>Dynamics-Aware Coupled Torque</i> (DACT) policies, a dynamics-aware learning framework that embeds disturbance compensation directly within the locomotion policy. 
+                  DACT couples feedforward joint torques with feedback-stabilized joint-position commands, enabling direct compensatory force generation while preserving high-frequency posture stabilization. 
+                  To handle the partial observability of external disturbances, DACT trains a latent context encoder to reconstruct next-step privileged observations, encouraging the encoder to capture disturbance-dependent changes in the robot's effective dynamics. 
+                  Additionally, a physics-informed neural network (PINN) regularization loss further biases learned actions toward physically consistent whole-body stabilization. 
+                  Together, these components bridge gait-level policy learning and force-level disturbance rejection, producing a unified policy for robust locomotion under payload, terrain, and torso-level perturbations.
+                  The main contributions of this paper are:
                 </p>
-              </div> -->
+                <ul>
+                  <li>
+                    We introduce <i>Dynamics-Aware Coupled Torque</i> (DACT) policies, a novel dynamics-aware legged locomotion policy learning framework that internalizes disturbance compensation through coupled torque&ndash;position actions, privileged dynamics reconstruction, and PINN-based whole-body action regularization.
+                  </li>
+                  <li>
+                    We show that these components provide complementary benefits for disturbance rejection: in simulation, DACT reduces failures by 43.0% under payload/CoM shifts and 49.6% under 6-DOF torso wrenches relative to the next-best method, while achieving the strongest overall torso stability.
+                  </li>
+                  <li>
+                    We demonstrate sim-to-real transfer on a Unitree Go1, showing robust locomotion across real-world terrains and disturbances, including dynamic liquid payload transport as a challenging external perturbation.
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
