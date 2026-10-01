@@ -212,9 +212,89 @@ function initializeComparisonCarousels() {
 }
 
 
+function initializeFeaturedVideo() {
+  var video = document.getElementById('paper-video');
+  var actionButton = document.getElementById('paper-video-action');
+
+  if (!video || !actionButton) {
+    return;
+  }
+
+  var initialPassComplete = false;
+  var initialPassStarted = false;
+
+  function showAction(label) {
+    actionButton.textContent = label;
+    actionButton.hidden = false;
+  }
+
+  function hideAction() {
+    actionButton.hidden = true;
+  }
+
+  function startInitialPass() {
+    initialPassStarted = true;
+    video.loop = false;
+
+    var autoplayAttempt = video.play();
+    if (autoplayAttempt && typeof autoplayAttempt.catch === 'function') {
+      autoplayAttempt.catch(function() {
+        showAction('Play video');
+      });
+    }
+  }
+
+  video.loop = false;
+  video.muted = true;
+
+  video.addEventListener('ended', function() {
+    if (!initialPassComplete) {
+      initialPassComplete = true;
+      video.loop = false;
+      showAction('Replay with looping');
+    }
+  });
+
+  video.addEventListener('play', function() {
+    initialPassStarted = true;
+    if (initialPassComplete) {
+      video.loop = true;
+    }
+    hideAction();
+  });
+
+  actionButton.addEventListener('click', function() {
+    if (video.ended || (video.duration && video.currentTime >= video.duration - 0.1)) {
+      video.currentTime = 0;
+    }
+    video.loop = initialPassComplete;
+    video.play().catch(function() {
+      showAction(initialPassComplete ? 'Replay with looping' : 'Play video');
+    });
+  });
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.intersectionRatio >= 0.35 && !initialPassStarted) {
+          startInitialPass();
+        } else if (entry.intersectionRatio < 0.35 && !video.paused && !video.ended) {
+          video.pause();
+          showAction(initialPassComplete ? 'Resume looping' : 'Resume video');
+        }
+      });
+    }, { threshold: [0, 0.35, 1] });
+
+    observer.observe(video);
+  } else {
+    startInitialPass();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   renderComparisonCards();
   initializeComparisonCarousels();
+  initializeFeaturedVideo();
 });
 
 $(document).ready(function() {

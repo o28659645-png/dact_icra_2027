@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css?v=20261001-2">
+  <link rel="stylesheet" href="./static/css/index.css?v=20261001-3">
   
   <!-- <link rel="icon" href="./static/images/favicon.ico"> -->
 
@@ -37,7 +37,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js?v=20261001-2"></script>
+  <script src="./static/js/index.js?v=20261001-3"></script>
 </head>
 <body>
 
@@ -130,14 +130,25 @@
 </section>
 
 <!-- Paper video. -->
-<section class="section">
+<section class="section featured-video-section" aria-labelledby="video-overview-title">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-max-desktop">
-        <video controls playsinline preload="metadata" width="100%">
-          <source src="./static/videos/dact_icra27_compressed_web.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+        <h2 class="title is-2 has-text-centered" id="video-overview-title">Video Overview</h2>
+        <figure class="featured-video-figure">
+          <div class="featured-video-frame">
+            <video id="paper-video" controls muted playsinline preload="metadata"
+                   aria-describedby="paper-video-caption">
+              <source src="./static/videos/dact_icra27_compressed_web.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button class="featured-video-action button is-dark is-rounded" id="paper-video-action"
+                    type="button" hidden>Replay with looping</button>
+          </div>
+          <figcaption class="media-caption" id="paper-video-caption">
+            DACT real-world disturbance-robust locomotion experiments.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -176,12 +187,17 @@
           <div class="columns is-centered">
             <div class="column">
               <h4 class="title is-2 has-text-centered">Motivation</h4>
-              <div class="has-text-centered">
-                <img src="./static/images/DACT_ICRA_Figure_One.png"
-                      class="interpolation-image"
-                      alt="Interpolate start reference image."
-                      width="80%" />
-              </div>
+              <figure class="research-figure research-figure-wide">
+                <a href="./static/images/DACT_ICRA_Figure_One.png" target="_blank" rel="noopener"
+                   aria-label="Open the motivation figure at full resolution">
+                  <img src="./static/images/DACT_ICRA_Figure_One.png"
+                       alt="Overview of real-world quadruped locomotion scenarios with payloads, disturbances, and varied terrain."
+                       loading="lazy" decoding="async" />
+                </a>
+                <figcaption class="media-caption">
+                  Real-world deployment scenarios considered by DACT. Select the figure to view it at full resolution.
+                </figcaption>
+              </figure>
                 <p>
                   Quadruped robots have achieved substantial advances in locomotion capabilities, enabling agile mobility through unstructured environments that remain difficult or inaccessible for wheeled platforms. 
                   Reinforcement learning (RL) has further expanded these capabilities by training robust gait policies in large-scale simulation, reducing reliance on hand-designed models while supporting dynamic behaviors across diverse terrains and commands.
@@ -218,12 +234,17 @@
             <div class="column">
               <div class="content">
                 <h3 class="title is-2 has-text-centered">DACT Approach</h3>
-                <div class="has-text-centered">
-                  <img src="./static/images/approach_figure_V04.png"
-                        class="interpolation-image"
-                        alt="Interpolate start reference image."
-                        width="70%" />
-                </div>
+                <figure class="research-figure research-figure-approach">
+                  <a href="./static/images/approach_figure_V04.png" target="_blank" rel="noopener"
+                     aria-label="Open the DACT architecture figure at full resolution">
+                    <img src="./static/images/approach_figure_V04.png"
+                         alt="DACT architecture coupling feedforward torque and feedback-stabilized position actions with privileged dynamics reconstruction and physics-informed regularization."
+                         loading="lazy" decoding="async" />
+                  </a>
+                  <figcaption class="media-caption">
+                    DACT policy architecture. Select the figure to view it at full resolution.
+                  </figcaption>
+                </figure>
                 <p>
                   To address these fundamental limitations, we introduce <i>Dynamics-Aware Coupled Torque</i> (DACT) policies, a dynamics-aware learning framework that embeds disturbance compensation directly within the locomotion policy. 
                   DACT couples feedforward joint torques with feedback-stabilized joint-position commands, enabling direct compensatory force generation while preserving high-frequency posture stabilization. 

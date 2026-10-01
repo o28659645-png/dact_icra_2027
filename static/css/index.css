@@ -105,6 +105,95 @@ body {
   max-width: 1600px;
 }
 
+.featured-video-section {
+  padding-top: 1.5rem;
+}
+
+.featured-video-figure {
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.featured-video-frame {
+  background: #111;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(25, 35, 55, 0.16);
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-video-frame video {
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: contain;
+  width: 100%;
+}
+
+.featured-video-action {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.featured-video-action[hidden] {
+  display: none;
+}
+
+.media-caption {
+  color: #626b78;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin: 0.8rem auto 0;
+  max-width: 800px;
+  text-align: center;
+}
+
+.research-figure {
+  margin: 1.5rem auto 2rem;
+  text-align: center;
+}
+
+.research-figure-wide {
+  max-width: 1180px;
+}
+
+.research-figure-approach {
+  max-width: 980px;
+}
+
+.research-figure a {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(25, 35, 55, 0.1);
+  display: block;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.research-figure a:hover {
+  box-shadow: 0 12px 30px rgba(25, 35, 55, 0.16);
+  transform: translateY(-2px);
+}
+
+.research-figure a:focus-visible {
+  outline: 3px solid #276cda;
+  outline-offset: 4px;
+}
+
+.research-figure img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-figure a {
+    transition: none;
+  }
+}
+
 .experiment-comparisons {
   background: #f7f8fa;
 }
