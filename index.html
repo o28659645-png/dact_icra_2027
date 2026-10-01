@@ -252,6 +252,64 @@
   </div>
 </section>
 
+<!-- Experiment comparisons. -->
+<section class="section experiment-comparisons" id="experiment-comparisons">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-max-desktop">
+        <h2 class="title is-2">Experiment Comparisons</h2>
+        <p class="comparison-introduction">
+          Paired trials compare DACT with the position-control (POS) baseline under
+          eight payload and disturbance scenarios. Use the arrows or dots to move
+          through the three matched videos for each scenario.
+        </p>
+      </div>
+    </div>
+    <div id="comparison-cards"></div>
+  </div>
+</section>
+
+<template id="comparison-card-template">
+  <article class="comparison-card">
+    <header class="comparison-card-header">
+      <h3 class="title is-3"></h3>
+      <p class="comparison-description"></p>
+    </header>
+    <div class="comparison-carousel" data-comparison-carousel>
+      <div class="comparison-slides"></div>
+      <div class="comparison-controls">
+        <button class="comparison-arrow comparison-previous" type="button">
+          <span aria-hidden="true">&#8249;</span>
+        </button>
+        <div class="comparison-position">
+          <span class="comparison-status" aria-live="polite"></span>
+          <div class="comparison-dots"></div>
+        </div>
+        <button class="comparison-play-both button is-dark is-rounded" type="button">Play both</button>
+        <button class="comparison-arrow comparison-next" type="button">
+          <span aria-hidden="true">&#8250;</span>
+        </button>
+      </div>
+    </div>
+  </article>
+</template>
+
+<template id="comparison-slide-template">
+  <div class="comparison-slide" hidden>
+    <div class="comparison-video-grid">
+      <div class="comparison-video-column">
+        <h4 class="comparison-approach-label comparison-approach-label-dact">DACT</h4>
+        <video controls muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="comparison-video-column">
+        <h4 class="comparison-approach-label comparison-approach-label-pos">POS</h4>
+        <video controls muted loop playsinline preload="metadata"></video>
+      </div>
+    </div>
+  </div>
+</template>
+<!--/ Experiment comparisons. -->
+
 <!-- 
 <section class="section">
   <div class="container is-max-desktop">
