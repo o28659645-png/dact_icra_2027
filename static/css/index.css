@@ -155,6 +155,11 @@ body {
   text-align: center;
 }
 
+.content .research-figure {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .research-figure-wide {
   max-width: 1180px;
 }
